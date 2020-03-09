@@ -1,8 +1,10 @@
 class Greeter {
   consructor(millisecondsFnc) {
-    this.currentDate = new Date(millisecondsFnc);
+    this.millisecondsFnc = millisecondsFnc;
   }
   greet(person = "") {
+    const date = new Date(this.millisecondsFnc())
+    const hours = date.getHours();
     if (this.currentDate.getHours() >= 6 && this.currentDate.getHours() <= 12) {
       return `Good morning${
         person !== ""
